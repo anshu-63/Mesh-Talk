@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MeshTalk" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <item name="colorPrimary">@color/primary_warm_dark</item>
+        <item name="colorOnPrimary">@color/on_primary_warm_dark</item>
+        <item name="colorPrimaryContainer">@color/primary_container_warm_dark</item>
+        <item name="colorOnPrimaryContainer">@color/on_primary_container_warm_dark</item>
+
+        <item name="colorSecondary">@color/secondary_warm_dark</item>
+        <item name="colorOnSecondary">@color/on_secondary_warm_dark</item>
+        <item name="colorSecondaryContainer">@color/secondary_container_warm_dark</item>
+        <item name="colorOnSecondaryContainer">@color/on_secondary_container_warm_dark</item>
+
+        <item name="android:windowBackground">@color/background_warm_dark</item>
+        <item name="colorSurface">@color/surface_warm_dark</item>
+    </style>
+</resources>

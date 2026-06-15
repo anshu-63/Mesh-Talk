@@ -1,0 +1,23 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MeshTalk" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/primary_warm</item>
+        <item name="colorOnPrimary">@color/on_primary_warm</item>
+        <item name="colorPrimaryContainer">@color/primary_container_warm</item>
+        <item name="colorOnPrimaryContainer">@color/on_primary_container_warm</item>
+
+        <item name="colorSecondary">@color/secondary_warm</item>
+        <item name="colorOnSecondary">@color/on_secondary_warm</item>
+        <item name="colorSecondaryContainer">@color/secondary_container_warm</item>
+        <item name="colorOnSecondaryContainer">@color/on_secondary_container_warm</item>
+
+        <item name="colorTertiary">@color/tertiary_warm</item>
+        <item name="colorOnTertiary">@color/on_tertiary_warm</item>
+
+        <item name="android:windowBackground">@color/background_warm</item>
+        <item name="colorSurface">@color/surface_warm</item>
+    </style>
+
+    <style name="Theme.MeshTalk" parent="Base.Theme.MeshTalk" />
+</resources>
