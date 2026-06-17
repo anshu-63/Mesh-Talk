@@ -1,62 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#121212"
-    android:padding="12dp">
+    android:padding="16dp">
 
     <LinearLayout
-        android:id="@+id/layoutConnectionSetup"
+        android:id="@+id/layoutPageOnboarding"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="horizontal"
-        android:weightSum="2">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mesh Network Login"
+            android:textColor="#BB86FC"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="32dp" />
+
+        <EditText
+            android:id="@+id/usernameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your unique username..."
+            android:textColorHint="#666666"
+            android:textColor="#FFFFFF"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/txtSavedUsernameDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#03DAC5"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp" />
 
         <Button
-            android:id="@+id/advertiser"
-            android:layout_width="0dp"
+            android:id="@+id/btnStartChatting"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_weight="1"
+            android:text="Join Mesh Network"
             android:backgroundTint="#BB86FC"
-            android:text="Advertiser"
-            android:textColor="#000000" />
-
-        <Button
-            android:id="@+id/discoverer"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="#BB86FC"
-            android:text="Discoverer"
             android:textColor="#000000" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/layoutChatScreen"
+        android:id="@+id/layoutPageDeviceList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:visibility="gone">
 
         <TextView
-            android:id="@+id/txtChatHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="12dp"
-            android:text="Connected Mesh Room"
+            android:text="Available Nodes in Mesh"
             android:textColor="#BB86FC"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <ListView
+            android:id="@+id/devicesListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#333333"
+            android:dividerHeight="1dp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutPageChatDashboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txtChatRoomHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chatting with: None"
+            android:textColor="#BB86FC"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="16dp" />
 
         <ScrollView
             android:id="@+id/chatScrollView"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:fillViewport="true">
+            android:layout_height="match_parent"
+            android:layout_below="@id/txtChatRoomHeader"
+            android:layout_above="@id/bottomBar"
+            android:layout_marginBottom="8dp">
 
             <LinearLayout
                 android:id="@+id/messageContainer"
@@ -66,31 +111,32 @@
         </ScrollView>
 
         <LinearLayout
+            android:id="@+id/bottomBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_vertical">
 
             <EditText
                 android:id="@+id/messageInput"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:drawable/editbox_dropdown_light_frame"
                 android:hint="Type your message..."
-                android:padding="12dp"
+                android:textColorHint="#666666"
                 android:textColor="#FFFFFF"
-                android:textColorHint="#666666" />
+                android:backgroundTint="#FFFFFF" />
 
             <ImageButton
                 android:id="@+id/btnSend"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="8dp"
-                android:background="@android:drawable/ic_menu_send"
-                android:backgroundTint="#03DAC6" />
+                android:src="@android:drawable/ic_menu_send"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="Send Button"
+                app:tint="#03DAC5" />
         </LinearLayout>
-    </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>
